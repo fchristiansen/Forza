@@ -12,10 +12,12 @@
      <?php include(TEMPLATEPATH . '/include-portafolio.php'); ?>
 
      <?php  include(TEMPLATEPATH . '/include-equipo.php'); ?>
+    <div class="hidden">
+        <?php  include(TEMPLATEPATH . '/include-intro-clientes.php'); ?>
+    </div>
+          <?php  include(TEMPLATEPATH . '/include-clientes.php'); ?>
 
-     <?php  include(TEMPLATEPATH . '/include-intro-clientes.php'); ?>
 
-     <?php  include(TEMPLATEPATH . '/include-clientes.php'); ?>
 
      <?php  include(TEMPLATEPATH . '/include-contacto.php'); ?>
 
