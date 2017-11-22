@@ -6,7 +6,7 @@
 
 		$args = array (
         'post_type' 		=> 'portafolio',
-        'post_per_page' 	=> -1,
+        'posts_per_page' 	=> -1,
         'post_status'       => 'publish'
 			);
   			$the_query = new WP_Query ($args);
