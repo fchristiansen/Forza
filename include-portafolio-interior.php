@@ -2,13 +2,12 @@
     <div class="container-fluid nopad">
       <div class="row no-gutter portafolio-container">
     <?php
-    	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
 
 		$args = array (
         'post_type' 		=> 'portafolio',
-        'post_per_page' 	=> 3,
-        'post_status'       => 'publish',
-        'paged'          => $paged
+        'post_per_page' 	=> -1,
+        'post_status'       => 'publish'
 			);
   			$the_query = new WP_Query ($args);
 
@@ -17,8 +16,8 @@
             <?php while ( $the_query->have_posts() ) : $the_query->the_post();
 	            $i++;
 
-$terms = wp_get_post_terms($post->ID, 'tipo_portafolio',  array( 'fields' => 'names' ) );
-$tipo = $terms[0];
+			$terms = wp_get_post_terms($post->ID, 'tipo_portafolio',  array( 'fields' => 'names' ) );
+			$tipo = $terms[0];
 
             ?>
 			<?php if($tipo == 'Video') :?>
@@ -122,7 +121,7 @@ $tipo = $terms[0];
 
 
             <?php endwhile;  ?>
-				<?php wp_pagenavi(array( 'query' => $the_query ));?>
+				<?php // wp_pagenavi(array( 'query' => $the_query ));?>
 
 
             <?php wp_reset_query(); ?>
