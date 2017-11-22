@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Flama-Black';
+    src: url('../fonts/flama-black-webfont.woff2') format('woff2'),
+         url('../fonts/flama-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flama-Bold';
+    src: url('../fonts/flama-bold-webfont.woff2') format('woff2'),
+         url('../fonts/flama-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flama';
+    src: url('../fonts/flama-webfont.woff2') format('woff2'),
+         url('../fonts/flama-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Flama-Light';
+    src: url('../fonts/flama-light-webfont.woff2') format('woff2'),
+         url('../fonts/flama-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Flama-Italic';
+    src: url(../fonts/'flama-italic-webfont.woff2') format('woff2'),
+         url(../fonts/'flama-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

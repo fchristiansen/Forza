@@ -1,0 +1,103 @@
+section.contacto {
+      min-height: 760px;
+      background-color: $rojo;
+      overflow: hidden;
+      .intro {
+        margin-top: 80px;
+        margin-bottom: 80px;
+        @media (min-width: 1200px) {
+            padding: 0 200px;
+         }
+        @media (min-width: 992px) and (max-width: 1199px) {
+            padding: 0 50px;
+         }
+
+        h2 {
+           @include bold(48px, white);
+           text-transform: uppercase;
+           text-align: center;
+           margin-bottom: 40px;
+      
+        }
+        p{
+         @include bold(20px, white);
+         text-align: center;
+        }
+      }
+
+      h3 {
+        @include light(22px, white);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+            @include regular(17px, white);
+            font-style: italic;
+            margin: 20px 0;
+            &:first-child {
+              margin-top: 0;
+            }
+            i {
+              position: relative;
+              top: 4px;
+              &.fa {
+                font-size: 30px;
+                margin-right: 10px;
+                line-height: 20px;
+              }
+            }
+            
+        }
+      }
+      // form
+      form#form_contacto {
+        //color del placeholder
+        ::-webkit-input-placeholder {
+           @include regular(18px, $negro);
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+           @include regular(18px, $negro);  
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+           @include regular(18px, $negro);  
+        }
+
+        :-ms-input-placeholder {  
+           @include regular(18px, $negro);  
+        }
+        .form-group {
+            .form-control {
+                border-radius: 0;
+                border: none;
+            }
+        }
+        textarea.form-control {
+                border-radius: 0;
+                border: none;
+                resize: none;
+        }
+
+      }
+
+} // datos contacto y form
+
+
+section.map {
+ min-height: 500px;
+  #map {
+        height: 500px;
+        width: 100%;
+        img {
+          max-width: none;
+        } 
+       }
+
+}
+

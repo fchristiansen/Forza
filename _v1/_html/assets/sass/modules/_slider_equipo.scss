@@ -1,0 +1,153 @@
+section.team{
+      min-height: 680px;
+      background-color: $rojo;
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 80px;
+       overflow: hidden;
+    .intro {
+      margin-bottom: 40px;
+      h2 {
+       @include bold(48px, white);
+       text-transform: uppercase;
+       text-align: center;
+       margin-bottom: 40px;
+  
+    }
+    p{
+     @include bold(20px, white);
+     text-align: center;
+    }
+    }
+
+    .triangle1, .triangle2, .circle, .circle_lg {
+      position: absolute;
+    }
+    .triangle1 {
+       background: url(../img/triangle.svg) no-repeat center center;
+      background-size: cover;
+      width: 190px;
+      height: 207px;
+      bottom: -110px;
+      left: 12%;
+        @media (max-width: 767px) {
+          left: -50px;
+      }
+
+    }
+    .triangle2 {
+      @extend .triangle1;
+       bottom: auto;
+       left: auto;
+       right: -100px;
+       top: -120px;
+       @media (max-width: 767px) {
+         right: -130px;
+       }
+    }
+
+    .circle {
+      background: url(../img/circle_xs.svg) no-repeat center center;
+      background-size: cover;
+      width: 234px;
+      height: 233px;
+      right: -130px;
+      bottom: 80px;
+      
+        @media (max-width: 1024px) {
+        bottom: -80px;
+      }
+        @media (max-width: 767px) {
+        bottom: -150px;
+      }
+    }
+       .circle_lg{
+          background: url(../img/circle_lg.svg) no-repeat center center;
+          width: 536px;
+          height: 533px;
+          left: -330px;
+          top: -240px;
+            @media (max-width: 1024px) {
+                width: 496px;
+                height: 493px;
+                top: -350px;
+                left: -250px;
+          }
+            @media (max-width: 767px) {
+              left: -350px;
+            }
+    }
+
+// slider
+
+#slider_team {
+    .item {
+          text-align: center;
+          h3 {
+              @include bold(20px, white);
+              text-transform: uppercase;
+          }
+          p{
+           @include regular(20px, white);
+           font-style: italic;
+             
+          }
+          img {
+            border: 10px solid white;
+            max-width: 250px;
+            margin-bottom: 20px;
+             @media(max-width: 767px){
+                max-width: 250px;
+              }
+            }
+    } // item
+    
+  
+    .owl-next, .owl-prev {
+              width: 24px;
+              height: 37px;
+              position: absolute;
+              text-indent: -9999px;
+              top: 50%;
+              margin-top: -60px;
+              opacity: 1;
+              transition:all 0.2s ease-in-out;
+              display: block !important;
+              z-index: 9999 !important;
+               &:hover {
+                cursor: pointer;
+                background-color: transparent;
+                opacity: 0.5;
+              }
+     }
+
+      .owl-next {
+          background: url(../img/next.png) no-repeat !important;
+          right: 0px;
+              @media (max-width:1024px){
+                right: -30px;
+               
+            }
+             @media (max-width:768px){
+                right: -10px;
+           }
+      }
+      .owl-prev {
+          background: url(../img/prev.png) no-repeat !important;
+          left: 0px;
+          @media (max-width:1024px){
+              left: -30px;
+          }
+           @media (max-width:768px){
+                left: -10px;
+            }
+      }
+
+
+
+
+  } // owl carousel team
+
+  
+
+} // section team

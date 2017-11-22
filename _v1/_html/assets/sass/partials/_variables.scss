@@ -1,0 +1,41 @@
+$rojo : #fc371a;
+$negro : #322b2a;
+
+//322b2a
+
+// font stacks
+
+  @mixin black($size, $color) {
+  font-family:'Flama-Black', Helvetica, Arial, sans-serif;
+  font-size: $size;
+  color: $color;
+  }
+
+  @mixin bold($size, $color) {
+  font-family:'Flama-Bold', Helvetica, Arial, sans-serif;
+  font-size: $size;
+  color: $color;
+  }
+
+  @mixin regular($size, $color){
+  font-family: 'Flama', Helvetica, Arial, sans-serif;
+  font-size: $size;
+  color: $color;
+  }
+
+  @mixin light($size, $color){
+  font-family: 'Flama-Light', Helvetica, Arial, sans-serif;
+  font-size: $size;
+  color: $color;
+  }
+
+  @mixin italic($size, $color){
+  font-family: 'Flama-Italic', Helvetica, Arial, sans-serif;
+  font-size: $size;
+  color: $color;
+  }
+
+
+
+
+

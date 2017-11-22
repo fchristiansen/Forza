@@ -1,0 +1,46 @@
+footer {
+  min-height: 140px;
+  background-color: $rojo;
+  position: relative;
+  .arrow {
+    background: url(../img/arrow_up.png) no-repeat;
+    width: 99px;
+    height: 23px;
+    @include centerer(true, false);
+    top:- 23px;
+    z-index: 1000;
+  }
+
+      .rrss {
+        width: 100%;
+        text-align: center;
+        @include centerer(true, true);
+        p{
+          margin-bottom: 20px;
+          @include bold(18px, white);
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        li {
+          display: inline-block;
+          margin-right: 10px;
+            a {
+              &:hover {
+
+              }
+              i {
+                &.fa-circle {
+                  color: white;
+                }
+                &.fa-inverse {
+                  color: $rojo;
+                }
+              }
+            }
+        }
+      }
+    }
+
+}

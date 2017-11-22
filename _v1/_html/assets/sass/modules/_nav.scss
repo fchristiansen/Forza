@@ -1,0 +1,41 @@
+nav {
+    .navbar-header {
+    background-color: $negro;
+     @media(min-width: 768px){
+                background-color: transparent;
+      }
+      padding: 10px 0;
+      .navbar-toggle {
+        float: left;
+        margin-left: 25px;
+        background-color: $rojo;
+        border-radius: 0;
+        border-color: $rojo;
+          .icon-bar {
+            background-color: white;
+          }
+         
+          &:hover {
+            background-color: black;
+            border-color: transparent;
+          }
+          &:active, &:visited, &:focus {
+              background-color: black;
+              border-color: transparent;
+          }
+      }
+    }
+    #navbar {
+      &.navbar-collapse {
+        border-color: $negro;
+          .navbar-nav {
+            margin: 0 40px 0 0;
+            @media (max-width: 767px){
+              margin: 0;
+            }
+          }
+      }
+    }
+   
+
+}
