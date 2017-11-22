@@ -3,7 +3,7 @@
 
                  // Wow Page Animations
                         var wow = new WOW(
-                          { 
+                          {
                             animateClass: 'animated', // set our global css classT (default is animated)
                             offset: 0, // set distance to content until it triggers (default is 0)
                             mobile: false, // remove animations for mobiles/tablets (default is true)
@@ -29,7 +29,7 @@
           horizrailenabled: false
       });
 
-       // ===== slider equipo ==== 
+       // ===== slider equipo ====
 
           $('#slider_team').owlCarousel({
                   loop:true,
@@ -52,8 +52,31 @@
                   }
               });
 
+           // ===== slider servicios ====
 
-       // ===== slider clientes ====     
+          $('#slider-servicios').owlCarousel({
+                  loop:true,
+                  margin:10,
+                   nav:true,
+                  dots:false,
+                  autoplay: true,
+                  autoplaySpeed: 1000,
+                  autoplayTimeout:3000,
+                  responsive:{
+                      0:{
+                          items:1
+                      },
+                      767:{
+                          items:2
+                      },
+                      1024:{
+                          items:4
+                      }
+                  }
+              });
+
+
+       // ===== slider clientes ====
 
               $('#slider_clientes').owlCarousel({
                   loop:true,
@@ -61,7 +84,7 @@
                   nav:true,
                   dots:false,
                   autoplay: true,
-               
+
                   autoplaySpeed: 500,
                   responsive:{
                       0:{
@@ -74,11 +97,11 @@
                           items:4
                       }
                   }
-              }); 
+              });
 
-            
 
-               // ===== smooth scroll to section==== 
+
+               // ===== smooth scroll to section====
 
               $(function() {
                 $('a[href*="#"]:not([href="#"])').click(function() {
@@ -96,7 +119,7 @@
               });
 
 
-              // ===== Scroll to Top ==== 
+              // ===== Scroll to Top ====
               $(window).scroll(function() {
                   if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
                       $('#return-to-top').fadeIn(500);    // Fade in the arrow
@@ -113,7 +136,7 @@
 
 
 
-                 // ===== parallax  ==== 
+                 // ===== parallax  ====
 
 
                    if ($("#servicios").length) {
@@ -172,7 +195,7 @@
               /*=============================================
               =               MODALES VIDEO                 =
               =============================================*/
-  
+
               $('#modal_video1').on('hide.bs.modal', function () {
                   callPlayer('el-video1', 'stopVideo');
               });
@@ -182,7 +205,7 @@
               });
 
 
-                
+
               $('.slider_galeria').owlCarousel({
               loop:true,
               margin:40,
@@ -201,8 +224,8 @@
                       items:1
                   }
               }
-          }); 
-              
+          });
+
   $('#form_contacto')
           .formValidation({
               icon: {
@@ -217,7 +240,7 @@
 
               var $form = $(e.target),
                   fv    = $(e.target).data('formValidation');
-        
+
         $('#btngrabar').html('Enviando <i class="fa fa fa-spinner fa-spin"></i>');
 
         var nombre = $form.data('nombre')
@@ -240,9 +263,9 @@
                   error('Ha ocurrido un erro, por favor inténtalo de nuevo..');
             }
                       $('#btngrabar').html('Enviar');
-          
-          } 
-            
+
+          }
+
         })
         .fail(function( jqXHR, textStatus, errorThrown ) {
              if ( console && console.log ) {
@@ -250,11 +273,11 @@
              }
         });
 
-          }); 
+          });
 
                     $(document).scroll(function() {
                         console.log($(document).scrollTop());
-                    });  
+                    });
 
 
 })( jQuery ); //no conflict

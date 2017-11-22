@@ -64,7 +64,7 @@ function initialize()
     }
   ];
 
-  var myLatLng1 = {lat: -33.4055507, lng: -70.5722807};
+  var myLatLng1 = {lat: -33.4055507, lng: -70.570092};
 
   var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
 
