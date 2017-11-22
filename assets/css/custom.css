@@ -572,6 +572,18 @@ section.caja_servicios .servicio .desc{
 #slider-servicios{
 	margin-bottom: 80px;
 }
+#slider-servicios .item{
+	position: relative;
+	height: 400px;
+}
+#slider-servicios .item .btn_rojo{
+	position: absolute;
+	bottom:0;
+	 left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+}
 section.caja_servicios .servicio .desc h3{
 	text-align: center;
 	font-size: 24px;
