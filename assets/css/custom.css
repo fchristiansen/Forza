@@ -550,7 +550,12 @@ section#portfolio.portfolio .btn_rojo:focus{
 
 
 
-
+section.caja_servicios .servicio.arco4,
+section.caja_servicios .servicio.arco3,
+section.caja_servicios .servicio.arco2,
+section.caja_servicios .servicio.arco1{
+	background: none;
+}
 
 
 
