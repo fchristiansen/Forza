@@ -12,6 +12,11 @@
   			$the_query = new WP_Query ($args);
 
         	$i = 0;
+
+        	$count_posts = wp_count_posts( 'portafolio' )->publish;
+
+        	$c = 1;
+
         ?>
             <?php while ( $the_query->have_posts() ) : $the_query->the_post();
 	            $i++;
@@ -19,9 +24,19 @@
 			$terms = wp_get_post_terms($post->ID, 'tipo_portafolio',  array( 'fields' => 'names' ) );
 			$tipo = $terms[0];
 
+			$css = "col-md-3";
+			
+			if($tipo == 'Video'){
+				$css = "col-md-6";
+			}
+
+
+			
+
+
             ?>
 			<?php if($tipo == 'Video') :?>
-            <div class="col-sm-12 col-md-6 item">
+            <div class="col-sm-12 <?php echo $css;?> item">
                <a href="javascript:void(0);" class="hovereffect" data-toggle="modal" data-target="#modal_video<?php echo $i; ?>">
                  <!-- 700 * 400 -->
                   <div class="img_bkg " style="background-image: url(<?php the_post_thumbnail_url('portafolio_video'); ?>)"></div>
@@ -55,7 +70,7 @@
 				</div>
 			</div> <!-- modal video 1 -->
 			<?php else : ?>
-			   <div class="col-sm-12 col-md-3 item">
+			   <div class="col-sm-12 <?php echo $css;?> item">
                 <a href="javascript:void(0);" class="hovereffect"  data-toggle="modal" data-target="#modal_galeria<?php echo $i; ?>">
                     <!-- 400 * 400 -->
                   <div class="img_bkg " style="background-image: url(<?php the_post_thumbnail_url('portafolio_galeria'); ?>)"></div>
@@ -120,7 +135,9 @@
 			<?php endif;?>
 
 
-            <?php endwhile;  ?>
+            <?php 
+            $c++;
+            endwhile;  ?>
 				<?php // wp_pagenavi(array( 'query' => $the_query ));?>
 
 

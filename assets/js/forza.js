@@ -273,12 +273,21 @@
              }
         });
 
+<<<<<<< HEAD
           });
 
                     $(document).scroll(function() {
                         console.log($(document).scrollTop());
                     });
 
+=======
+          }); 
+                /*
+                    $(document).scroll(function() {
+                        console.log($(document).scrollTop());
+                    });  
+                */
+>>>>>>> d757bc512b1e0d1b9faf4418d6367e0325b00f77
 
 })( jQuery ); //no conflict
 
