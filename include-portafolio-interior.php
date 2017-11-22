@@ -1,19 +1,14 @@
     <section id="portfolio" class="portfolio">
     <div class="container-fluid nopad">
-      <div class="row no-gutter <?php if(!is_home()) : ?> portafolio-container <?php endif;?>">
+      <div class="row no-gutter portafolio-container">
     <?php
+    	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 		$args = array (
         'post_type' 		=> 'portafolio',
-        'posts_per_page' 	=> 1,
+        'post_per_page' 	=> 3,
         'post_status'       => 'publish',
-			    'tax_query' => array(
-					array(
-						'taxonomy' => 'tipo_portafolio',
-						'field'    => 'slug',
-						'terms'    => 'video',
-					),
-				),
+        'paged'          => $paged
 			);
   			$the_query = new WP_Query ($args);
 
@@ -21,9 +16,13 @@
         ?>
             <?php while ( $the_query->have_posts() ) : $the_query->the_post();
 	            $i++;
-            ?>
 
-            <div class="col-sm-12 col-md-6">
+$terms = wp_get_post_terms($post->ID, 'tipo_portafolio',  array( 'fields' => 'names' ) );
+$tipo = $terms[0];
+
+            ?>
+			<?php if($tipo == 'Video') :?>
+            <div class="col-sm-12 col-md-6 item">
                <a href="javascript:void(0);" class="hovereffect" data-toggle="modal" data-target="#modal_video<?php echo $i; ?>">
                  <!-- 700 * 400 -->
                   <div class="img_bkg " style="background-image: url(<?php the_post_thumbnail_url('portafolio_video'); ?>)"></div>
@@ -36,7 +35,7 @@
                </a> <!-- btn modal video 1 -->
             </div>
 
-			<div class="modal fade custom_modal modal_video" id="modal_video<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal fade custom_modal modal_video item" id="modal_video<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -56,32 +55,8 @@
 					</div> <!-- modal content -->
 				</div>
 			</div> <!-- modal video 1 -->
-
-
-
-            <?php endwhile;  ?>
-            <?php wp_reset_query(); ?>
-          	<?php
-
-			$args = array (
-				'post_type' 		=> 'portafolio',
-				'posts_per_page' 	=> 4,
-			    'post_status'       => 'publish',
-			    'tax_query' => array(
-					array(
-						'taxonomy' => 'tipo_portafolio',
-						'field'    => 'slug',
-						'terms'    => 'galeria',
-					),
-				),
-			);
-			$the_query = new WP_Query ($args);
-            ?>
-            <?php while ( $the_query->have_posts() ) : $the_query->the_post();
-	            $i++;
-	        ?>
-
-            <div class="col-sm-12 col-md-3">
+			<?php else : ?>
+			   <div class="col-sm-12 col-md-3 item">
                 <a href="javascript:void(0);" class="hovereffect"  data-toggle="modal" data-target="#modal_galeria<?php echo $i; ?>">
                     <!-- 400 * 400 -->
                   <div class="img_bkg " style="background-image: url(<?php the_post_thumbnail_url('portafolio_galeria'); ?>)"></div>
@@ -96,7 +71,7 @@
 
 
 
-	       <div class="modal custom_modal modal_galeria" id="modal_galeria<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	       <div class="modal custom_modal modal_galeria item" id="modal_galeria<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	              <div class="modal-dialog" role="document">
 	                <div class="modal-content">
 	                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -143,67 +118,18 @@
 	                </div>  <!-- modal content -->
 	              </div>
 	       </div><!-- modal galeria 1 -->
+			<?php endif;?>
 
 
             <?php endwhile;  ?>
+				<?php wp_pagenavi(array( 'query' => $the_query ));?>
+
+
             <?php wp_reset_query(); ?>
+            <!-- Add the pagination functions here. -->
 
-          <?php
 
-		$args = array (
-        'post_type' 		=> 'portafolio',
-        'posts_per_page' 	=> 1,
-        'offset' 			=> 1,
-        'post_status'       => 'publish',
-			    'tax_query' => array(
-    					array(
-    						'taxonomy' => 'tipo_portafolio',
-    						'field'    => 'slug',
-    						'terms'    => 'video',
-    					),
-    				),
-			);
-			$the_query = new WP_Query ($args);
-	            $i++;
-            ?>
-            <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-            <div class="col-sm-12 col-md-6">
-               <a href="javascript:void(0);" class="hovereffect" data-toggle="modal" data-target="#modal_video<?php echo $i; ?>">
-                 <!-- 700 * 400 -->
-                  <div class="img_bkg " style="background-image: url(<?php the_post_thumbnail_url('portafolio_video'); ?>)"></div>
-                  <div class="info video">
-                    <img class="img-responsive ico" src="<?php bloginfo('template_url'); ?>/assets/img/ico_video.svg" alt="" >
-                    <h2><?php the_title(); ?></h2>
-                    <p><?php the_content( ); ?></p>
-                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  </div><!-- info -->
-               </a> <!-- btn modal video 2 -->
-            </div>
-
-			<div class="modal fade custom_modal modal_video" id="modal_video<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span class="fa-stack">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-times fa-stack-1x fa-inverse" ></i>
-							</span>
-						</button>
-
-						<div class="modal-body">
-							<div class="embed-responsive embed-responsive-16by9">
-								<iframe id="el-video<?php echo $i; ?>" class="video_player" width="560" height="315" src="https://www.youtube.com/embed/<?php echo get('id_del_video'); ?>?showinfo=0&rel=0&modestbranding=1&enablejsapi=1" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div class="modal-footer">
-						</div>
-					</div> <!-- modal content -->
-				</div>
-			</div> <!-- modal video 2 -->
-            <?php endwhile;  ?>
-            <?php wp_reset_query(); ?>
-        </div>  <!-- row -->
+          	</div>
     </div> <!-- container fluid  -->
 
 			<?php if(is_home()) { ?>
