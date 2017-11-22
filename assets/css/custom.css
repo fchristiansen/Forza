@@ -521,3 +521,43 @@ footer .rrss ul li { display: inline-block; margin-right: 10px; }
 footer .rrss ul li a i.fa-circle { color: white; }
 
 footer .rrss ul li a i.fa-inverse { color: #fc371a; }
+
+
+/*=================== agregado por christiansen*/
+
+section#portfolio.portfolio{
+	position: relative;
+}
+
+section#portfolio.portfolio .btn_rojo{
+	position: absolute;
+	 left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        bottom:0;
+        padding: 10px 100px;
+        border-radius: 0;
+        border: none;
+        transition: all 0.5s ease-in-out;
+}
+section#portfolio.portfolio .btn_rojo:hover,
+section#portfolio.portfolio .btn_rojo:focus{
+		background: #000;
+		color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
