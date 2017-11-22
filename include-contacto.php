@@ -1,7 +1,7 @@
     <section id="contacto" class="contacto">
       <div class="container">
         <div class="intro ">
-              <?php 
+              <?php
                  $args = array (
                      'page_id' => 20
                    );
@@ -14,14 +14,16 @@
              </div>
           </div> <!-- intro -->
             <?php endwhile; ?>
-            <?php wp_reset_query(); ?>  
+            <?php wp_reset_query(); ?>
 
         <div class="row">
             <div class="col-sm-4 mb">
               <h3>nuestra oficina</h3>
+
               <ul>
-                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Asturias 166, Las Condes, Santiago</li>
-                <li><i class="fa fa-phone" aria-hidden="true"></i> (+562) 220 763 16</li>
+                <li><i class="fa fa-map-marker" aria-hidden="true"></i>Los Militares 5890, Piso 17. Las Condes, Santiago.</li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i> +56 2 327 4200</li>
+
                 <li><i class="fa fa-envelope" aria-hidden="true"></i> contacto@agenciaforza.cl</li>
               </ul>
             </div>
@@ -34,12 +36,12 @@
             </div>
             <div class="col-sm-4 mb">
               <h3>escríbenos</h3>
-                
-                <?php include(TEMPLATEPATH . '/include-form-contacto.php'); ?>   
+
+                <?php include(TEMPLATEPATH . '/include-form-contacto.php'); ?>
 
             </div>
         </div>
-      
+
       </div> <!-- container -->
     </section> <!-- / contacto -->
 
